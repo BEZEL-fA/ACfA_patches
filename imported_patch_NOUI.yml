@@ -1,0 +1,65 @@
+Version: 1.2
+
+Anchors:
+  NoUiModule: &NoUiModule
+      - [ be32, 0x011FFFF0, 0x38000000 ]
+      - [ be32, 0x011FFFF4, 0x9801007B ]
+      - [ be32, 0x011FFFF8, 0x801F0030 ]
+  
+
+PPU-c67c32700d8419d67b77a1ccfc88d05f37e41fc4:
+  "NOUI":
+    Games:
+      "ARMORED CORE for Answer":
+        BLUS30187: [ All ]
+    Author: "BEZEL"
+    Patch Version: 1.0
+    Group: ""
+    Notes: ""
+    Patch:
+      - [ be32, 0x003B8AD0, 0x48E47520 ]
+      - [ load, *NoUiModule ]
+      - [ be32, 0x011FFFFC, 0x4B1B8AD8 ]
+      - [ be32, 0x003B8B84, 0x38000000 ]
+      - [ be32, 0x003B8BC4, 0x38000000 ]
+      - [ be32, 0x0055D8D4, 0xC0221B38 ]
+      - [ be32, 0x0055D914, 0xC0221B38 ]
+      - [ be32, 0x003C16A4, 0x60000000 ]
+
+PPU-0bc5d0e97eebf1b3bf933f2e442acb20d3a1d969:
+  "NOUI":
+    Games:
+      "ARMORED CORE for Answer":
+        BLJM60066: [ 01.35 ]
+    Author: "BEZEL"
+    Patch Version: 1.0
+    Group: ""
+    Notes: ""
+    Patch:
+      - [ be32, 0x003B89C8, 0x48E47628 ]
+      - [ load, *NoUiModule ]
+      - [ be32, 0x011FFFFC, 0x4B1B89D0 ]
+      - [ be32, 0x003B8A7C, 0x38000000 ]
+      - [ be32, 0x003B8ABC, 0x38000000 ]
+      - [ be32, 0x0055D9F4, 0xC0221B38 ]
+      - [ be32, 0x0055DA34, 0xC0221B38 ]
+      - [ be32, 0x003C159C, 0x60000000 ]
+
+PPU-321ccf1f115007f3260650828b3c01e7e40775d4:
+  "NOUI":
+    Games:
+      "ARMORED CORE for Answer":
+        BLJM55005: [ All ]
+    Author: "BEZEL"
+    Patch Version: 1.0
+    Group: ""
+    Notes: ""
+    Patch:
+      - [ be32, 0x003B8B98, 0x48E47458 ]
+      - [ load, *NoUiModule ]
+      - [ be32, 0x011FFFFC, 0x4B1B8BA0 ]
+      - [ be32, 0x003B8C4C, 0x38000000 ]
+      - [ be32, 0x003B8C8C, 0x38000000 ]
+      - [ be32, 0x0055DBC4, 0xC0221B38 ]
+      - [ be32, 0x0055DC04, 0xC0221B38 ]
+      - [ be32, 0x003C176C, 0x60000000 ]
