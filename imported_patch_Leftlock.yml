@@ -1,0 +1,75 @@
+Version: 1.2
+
+Anchors:
+  FixLeftLock1: &FixLeftLock1
+      - [ be32, 0x011F9D44, 0x7D200026 ]
+      - [ be32, 0x011F9D48, 0x2F9A0000 ]
+      - [ be32, 0x011F9D4C, 0x419E0014 ]
+      - [ be32, 0x011F9D50, 0x817B0020 ]
+      - [ be32, 0x011F9D54, 0x2F8B0000 ]
+      - [ be32, 0x011F9D58, 0x409E0008 ]
+      - [ be32, 0x011F9D5C, 0x935B0020 ]
+      - [ be32, 0x011F9D60, 0x935B0000 ]
+      - [ be32, 0x011F9D64, 0x7D2FF120 ]
+  FixLeftLock2: &FixLeftLock2
+      - [ be32, 0x011F9DC4, 0x7D200026 ]
+      - [ be32, 0x011F9DC8, 0x2F9A0000 ]
+      - [ be32, 0x011F9DCC, 0x409E0018 ]
+      - [ be32, 0x011F9DD0, 0x817BFFE0 ]
+      - [ be32, 0x011F9DD4, 0x2F8B0000 ]
+      - [ be32, 0x011F9DD8, 0x419E000C ]
+      - [ be32, 0x011F9DDC, 0x917B0000 ]
+      - [ be32, 0x011F9DE0, 0x48000008 ]
+      - [ be32, 0x011F9DE4, 0x935B0000 ]
+      - [ be32, 0x011F9DE8, 0x7D2FF120 ]
+
+PPU-c67c32700d8419d67b77a1ccfc88d05f37e41fc4:
+  "Fix Left Lock":
+    Games:
+      "ARMORED CORE for Answer":
+        BLUS30187: [ All ]
+    Author: "BEZEL"
+    Patch Version: 1.0
+    Group: ""
+    Notes: ""
+    Patch:
+      - [ be32, 0x00979428, 0x4888091C ]
+      - [ load, *FixLeftLock1 ]
+      - [ be32, 0x011F9D68, 0x4B77F6C4 ]
+      - [ be32, 0x00979530, 0x48880894 ]
+      - [ load, *FixLeftLock2 ]
+      - [ be32, 0x011F9DEC, 0x4B77F748 ]
+
+PPU-0bc5d0e97eebf1b3bf933f2e442acb20d3a1d969:
+  "Fix Left Lock":
+    Games:
+      "ARMORED CORE for Answer":
+        BLJM60066: [ 01.35 ]
+    Author: "BEZEL"
+    Patch Version: 1.0
+    Group: ""
+    Notes: ""
+    Patch:
+      - [ be32, 0x00979538, 0x4888080C ]
+      - [ load, *FixLeftLock1 ]
+      - [ be32, 0x011F9D68, 0x4B77F7D4 ]
+      - [ be32, 0x00979640, 0x48880784 ]
+      - [ load, *FixLeftLock2 ]
+      - [ be32, 0x011F9DEC, 0x4B77F858 ]
+
+PPU-321ccf1f115007f3260650828b3c01e7e40775d4:
+  "Fix Left Lock":
+    Games:
+      "ARMORED CORE for Answer":
+        BLJM55005: [ All ]
+    Author: "BEZEL"
+    Patch Version: 1.0
+    Group: ""
+    Notes: ""
+    Patch:
+      - [ be32, 0x00979708, 0x4888063C ]
+      - [ load, *FixLeftLock1 ]
+      - [ be32, 0x011F9D68, 0x4B77F9A4 ]
+      - [ be32, 0x00979810, 0x488805B4 ]
+      - [ load, *FixLeftLock2 ]
+      - [ be32, 0x011F9DEC, 0x4B77FA28 ]
