@@ -8,7 +8,7 @@ Anchors:
       - [ be32, 0x011FFF80, 0x635AFFD0 ] #ori r26, r26, 0xffd0
       - [ be32, 0x011FFF84, 0x93BA0000 ] #stw r29, 0(r26)
       - [ be32, 0x011FFF88, 0x835D0010 ] #lwz r26, 0x10(r29)
-#func1test
+#func1
       - [ be32, 0x011FFF90, 0x7D200026 ] #mfcr r9
       - [ be32, 0x011FFF94, 0x2F9A0000 ] #cmpwi cr7, r26, 0
       - [ be32, 0x011FFF98, 0x419E0018 ] #beq cr7, 0x11fffb0
