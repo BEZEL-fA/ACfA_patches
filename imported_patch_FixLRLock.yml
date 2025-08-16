@@ -44,7 +44,7 @@ PPU-c67c32700d8419d67b77a1ccfc88d05f37e41fc4:
     Author: "BEZEL"
     Patch Version: 1.1
     Group: ""
-    Notes: "This patch fixes lock-on issues that occur in PvP. It addresses the left-weapon lock-on bug that happens in situations like 2P→1P, as well as the right-weapon issue that occurs in situations like 1P→2P.."
+    Notes: "This patch fixes a lock-on issue that occurs under certain conditions in PvP."
     Patch:
       - [ load, *FixLock ]
       - [ be32, 0x00979380, 0x48886BFC ] #b 0x11fff7c
@@ -62,7 +62,7 @@ PPU-0bc5d0e97eebf1b3bf933f2e442acb20d3a1d969:
     Author: "BEZEL"
     Patch Version: 1.1
     Group: ""
-    Notes: "This patch fixes lock-on issues that occur in PvP. It addresses the left-weapon lock-on bug that happens in situations like 2P→1P, as well as the right-weapon issue that occurs in situations like 1P→2P.."
+    Notes: "This patch fixes a lock-on issue that occurs under certain conditions in PvP."
     Patch:
       - [ load, *FixLock ]
       - [ be32, 0x00979490, 0x48886AEC ] #b 0x11fff7c
@@ -80,7 +80,7 @@ PPU-321ccf1f115007f3260650828b3c01e7e40775d4:
     Author: "BEZEL"
     Patch Version: 1.1
     Group: ""
-    Notes: "This patch fixes an issue with left-hand weapon locking in PvP."
+    Notes: "This patch fixes a lock-on issue that occurs under certain conditions in PvP."
     Patch:
       - [ load, *FixLock ]
       - [ be32, 0x00979660, 0x4888691C ] #b 0x11fff7c
