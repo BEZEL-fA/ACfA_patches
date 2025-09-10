@@ -2,39 +2,16 @@ Version: 1.2
 
 Anchors:
   FixLock: &FixLock
-#0x11fffd0 is variable
-#func0
-      - [ be32, 0x011FFF7C, 0x3F40011F ] #lis r26, 0x11f
-      - [ be32, 0x011FFF80, 0x635AFFD0 ] #ori r26, r26, 0xffd0
-      - [ be32, 0x011FFF84, 0x93BA0000 ] #stw r29, 0(r26)
-      - [ be32, 0x011FFF88, 0x835D0010 ] #lwz r26, 0x10(r29)
 #func1
-      - [ be32, 0x011FFF90, 0x7D200026 ] #mfcr r9
-      - [ be32, 0x011FFF94, 0x2F9A0000 ] #cmpwi cr7, r26, 0
-      - [ be32, 0x011FFF98, 0x419E0018 ] #beq cr7, 0x11fffb0
-      - [ be32, 0x011FFF9C, 0x817B0020 ] #lwz r11, 0x20(r27)
-      - [ be32, 0x011FFFA0, 0x2F8B0000 ] #cmpwi cr7, r11, 0
-      - [ be32, 0x011FFFA4, 0x409E0020 ] #bne cr7, 0x11fffc4
-      - [ be32, 0x011FFFA8, 0x935B0020 ] #stw r26, 0x20(r27)
-      - [ be32, 0x011FFFAC, 0x48000018 ] #b 0x11fffc4
-      - [ be32, 0x011FFFB0, 0x3D60011F ] #lis r11, 0x11f
-      - [ be32, 0x011FFFB4, 0x616BFFD0 ] #ori r11, r11, 0xffd0
-      - [ be32, 0x011FFFB8, 0x816B0000 ] #lwz r11, 0(r11)
-      - [ be32, 0x011FFFBC, 0x816B0030 ] #lwz r11, 0x30(r11)
-      - [ be32, 0x011FFFC0, 0x7D7A5B78 ] #mr r26, r11
-      - [ be32, 0x011FFFC4, 0x935B0000 ] #stw r26, 0(r27)
-      - [ be32, 0x011FFFC8, 0x7D2FF120 ] #mtcr r9
+      - [ be32, 0x011FFFD8, 0x801F0010 ] #lwz r0, 0x10(r31)
+      - [ be32, 0x011FFFDC, 0x2F800000 ] #cmpwi cr7, r0, 0x0
+      - [ be32, 0x011FFFE0, 0x409E0008 ] #bne 0x11fa010
+      - [ be32, 0x011FFFE4, 0x801F0030 ] #lwz r0, 0x30(r31)
 #func2
-      - [ be32, 0x011FFFD4, 0x7D200026 ] #mfcr r9
-      - [ be32, 0x011FFFD8, 0x2F9A0000 ] #cmpwi cr7, r26, 0
-      - [ be32, 0x011FFFDC, 0x409E0018 ] #bne cr7, 0x11ffff4
-      - [ be32, 0x011FFFE0, 0x817BFFE0 ] #lwz r11, -0x20(r27)
-      - [ be32, 0x011FFFE4, 0x2F8B0000 ] #cmpwi cr7, r11, 0 
-      - [ be32, 0x011FFFE8, 0x419E000C ] #beq cr7, 0x11ffff4
-      - [ be32, 0x011FFFEC, 0x917B0000 ] #stw r11, 0(r27)
-      - [ be32, 0x011FFFF0, 0x48000008 ] #b 0x11ffff8
-      - [ be32, 0x011FFFF4, 0x935B0000 ] #stw r26, 0(r27)
-      - [ be32, 0x011FFFF8, 0x7D2FF120 ] #mtcr r9
+      - [ be32, 0x011FFFEC, 0x801F0010 ] #lwz r0, 0x10(r31)
+      - [ be32, 0x011FFFF0, 0x2F800000 ] #cmpwi cr7, r0, 0x0
+      - [ be32, 0x011FFFF4, 0x409E0008 ] #bne 0x11fa030
+      - [ be32, 0x011FFFF8, 0x801FFFF0 ] #lwz r0, -0x10(r31)
 
 PPU-c67c32700d8419d67b77a1ccfc88d05f37e41fc4:
   "Fix Lock Problem in PvP":
@@ -47,12 +24,10 @@ PPU-c67c32700d8419d67b77a1ccfc88d05f37e41fc4:
     Notes: "This patch fixes a lock-on issue that occurs under certain conditions in PvP."
     Patch:
       - [ load, *FixLock ]
-      - [ be32, 0x00979380, 0x48886BFC ] #b 0x11fff7c
-      - [ be32, 0x011FFF8C, 0x4B7793F8 ] #b 0x979384
-      - [ be32, 0x00979428, 0x48886B68 ] #b 0x11fff90
-      - [ be32, 0x011FFFCC, 0x4B779460 ] #b 0x97942c
-      - [ be32, 0x00979530, 0x48886AA4 ] #b 0x11fffd4
-      - [ be32, 0x011FFFFC, 0x4B779538 ] #b 0x979534
+      - [ be32, 0x00974F74, 0x4888B064 ] #b 0x11fffd8
+      - [ be32, 0x011FFFE8, 0x4B774F90 ] #b 0x974f78
+      - [ be32, 0x0097503C, 0x4888AFB0 ] #b 0x11fffec
+      - [ be32, 0x011FFFFC, 0x4B775044 ] #b 0x975040
 
 PPU-0bc5d0e97eebf1b3bf933f2e442acb20d3a1d969:
   "Fix Lock Problem in PvP":
@@ -65,12 +40,10 @@ PPU-0bc5d0e97eebf1b3bf933f2e442acb20d3a1d969:
     Notes: "This patch fixes a lock-on issue that occurs under certain conditions in PvP."
     Patch:
       - [ load, *FixLock ]
-      - [ be32, 0x00979490, 0x48886AEC ] #b 0x11fff7c
-      - [ be32, 0x011FFF8C, 0x4B779508 ] #b 0x979494
-      - [ be32, 0x00979538, 0x48886A58 ] #b 0x11fff90
-      - [ be32, 0x011FFFCC, 0x4B779570 ] #b 0x97953c
-      - [ be32, 0x00979640, 0x48886994 ] #b 0x11fffd4
-      - [ be32, 0x011FFFFC, 0x4B779648 ] #b 0x979644
+      - [ be32, 0x00975084, 0x4888AF54 ] #b 0x11fffd8
+      - [ be32, 0x011FFFE8, 0x4B7750A0 ] #b 0x975088
+      - [ be32, 0x0097514C, 0x4888AEA0 ] #b 0x11fffec
+      - [ be32, 0x011FFFFC, 0x4B775154 ] #b 0x975150
 
 PPU-321ccf1f115007f3260650828b3c01e7e40775d4:
   "Fix Lock Problem in PvP":
@@ -83,9 +56,7 @@ PPU-321ccf1f115007f3260650828b3c01e7e40775d4:
     Notes: "This patch fixes a lock-on issue that occurs under certain conditions in PvP."
     Patch:
       - [ load, *FixLock ]
-      - [ be32, 0x00979660, 0x4888691C ] #b 0x11fff7c
-      - [ be32, 0x011FFF8C, 0x4B7796D8 ] #b 0x979664
-      - [ be32, 0x00979708, 0x48886888 ] #b 0x11fff90
-      - [ be32, 0x011FFFCC, 0x4B779740 ] #b 0x97970c
-      - [ be32, 0x00979810, 0x488867C4 ] #b 0x11fffd4
-      - [ be32, 0x011FFFFC, 0x4B779818 ] #b 0x979814
+      - [ be32, 0x00975254, 0x4888AD84 ] #b 0x11fffd8
+      - [ be32, 0x011FFFE8, 0x4B775270 ] #b 0x975258
+      - [ be32, 0x0097531C, 0x4888ACD0 ] #b 0x11fffec
+      - [ be32, 0x011FFFFC, 0x4B775324 ] #b 0x975320
