@@ -5,12 +5,12 @@ Anchors:
 #func1
       - [ be32, 0x011FFFD8, 0x801F0010 ] #lwz r0, 0x10(r31)
       - [ be32, 0x011FFFDC, 0x2F800000 ] #cmpwi cr7, r0, 0x0
-      - [ be32, 0x011FFFE0, 0x409E0008 ] #bne 0x11fa010
+      - [ be32, 0x011FFFE0, 0x409E0008 ] #bne 0x11fffe8
       - [ be32, 0x011FFFE4, 0x801F0030 ] #lwz r0, 0x30(r31)
 #func2
       - [ be32, 0x011FFFEC, 0x801F0010 ] #lwz r0, 0x10(r31)
       - [ be32, 0x011FFFF0, 0x2F800000 ] #cmpwi cr7, r0, 0x0
-      - [ be32, 0x011FFFF4, 0x409E0008 ] #bne 0x11fa030
+      - [ be32, 0x011FFFF4, 0x409E0008 ] #bne 0x11ffffc
       - [ be32, 0x011FFFF8, 0x801FFFF0 ] #lwz r0, -0x10(r31)
 
 PPU-c67c32700d8419d67b77a1ccfc88d05f37e41fc4:
@@ -59,4 +59,5 @@ PPU-321ccf1f115007f3260650828b3c01e7e40775d4:
       - [ be32, 0x00975254, 0x4888AD84 ] #b 0x11fffd8
       - [ be32, 0x011FFFE8, 0x4B775270 ] #b 0x975258
       - [ be32, 0x0097531C, 0x4888ACD0 ] #b 0x11fffec
+
       - [ be32, 0x011FFFFC, 0x4B775324 ] #b 0x975320
