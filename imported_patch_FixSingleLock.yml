@@ -98,7 +98,7 @@ PPU-0bc5d0e97eebf1b3bf933f2e442acb20d3a1d969:
       - [ be32, 0x011F8F2C, 0x93620000 ] #stw r27, 0(r2)
       - [ be32, 0x011F8F30, 0x82F8FFF4 ] #lwz r23, -0xc(r24)
       - [ be32, 0x011F8F34, 0x2F9700FF ] #cmpwi cr7, r23, 0xff
-      - [ be32, 0x011F8F38, 0x419E000C ] #beq cr7, 0x11f8f40
+      - [ be32, 0x011F8F38, 0x419E000C ] #beq cr7, 0x11f8f44
       - [ be32, 0x011F8F3C, 0x82F8FFF8 ] #lwz r23, -0x8(r24)
       - [ be32, 0x011F8F40, 0x92E20020 ] #stw r23, 0x20(r2)
 #origin
@@ -162,4 +162,5 @@ PPU-0bc5d0e97eebf1b3bf933f2e442acb20d3a1d969:
       - [ be32, 0x011F8FF0, 0xE881FFE8 ] #ld r4, -0x18(r1)
       - [ be32, 0x011F8FF4, 0xE861FFF0 ] #ld r3, -0x10(r1)
       - [ be32, 0x011F8FF8, 0xE841FFF8 ] #ld r2, -0x8(r1)
+
       - [ be32, 0x011F8FFC, 0x4B77C154 ] #b 0x975150
