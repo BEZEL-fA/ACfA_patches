@@ -18,9 +18,11 @@ PPU-cd96ecb17388ccb07124fec4c64ea9f30e1eb2dc:
     Games:
       "Armored Core 4":
         BLJM60012: [ 01.05 ]
+        BLJM60062: [ 01.00 ]
     Author: "BEZEL"
     Patch Version: 1.0
     Group:
     Notes: "This patch fixes the issue where PvP becomes unplayable by disabling the update check."
     Patch:
       - [ be32, 0x00069FC4, 0x38600001 ] #li r3, 0x1
+
