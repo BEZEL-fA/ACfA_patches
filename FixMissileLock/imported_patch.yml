@@ -1,0 +1,55 @@
+Version: 1.2
+
+Anchors:
+  MissileFix: &MissileFix
+      - [ be32, 0x011FFFBC, 0x2F830000 ] # cmpwi cr7, r3, 0x0
+      - [ be32, 0x011FFFC0, 0x409E0014 ] # bne cr7, 0x11fffd4
+      - [ be32, 0x011FFFC4, 0x809FFFFC ] # lwz r4, -0x4(r31)
+      - [ be32, 0x011FFFC8, 0x8884FFD4 ] # lbz r4, -0x2c(r4)
+      - [ be32, 0x011FFFCC, 0x2F840001 ] # cmpwi cr7, r4, 0x1
+      - [ be32, 0x011FFFD0, 0x4FDEF042 ] # crnot 30, 30
+
+PPU-0bc5d0e97eebf1b3bf933f2e442acb20d3a1d969:
+  "Fix Hangar Missile":
+    Games:
+      "ARMORED CORE for Answer":
+        BLJM60066: [ 01.35 ]
+    Author: "BEZEL"
+    Patch Version: 1.0
+    Group: ""
+    Notes: "Fixes an issue where hangar missiles fail to lock on correctly."
+    Patch:
+      - [ load, *MissileFix ]
+      - [ be32, 0x007B406C, 0x48A4BF50 ] # b 0x11fffbc
+      - [ be32, 0x011FFFD4, 0x4B5B409C ] # b 0x7b4070
+
+PPU-c67c32700d8419d67b77a1ccfc88d05f37e41fc4:
+
+  "Fix Hangar Missile":
+    Games:
+      "ARMORED CORE for Answer":
+        BLUS30187: [ All ]
+    Author: "BEZEL"
+    Patch Version: 1.0
+    Group: ""
+    Notes: "Fixes an issue where hangar missiles fail to lock on correctly."
+    Patch:
+      - [ load, *MissileFix ]
+      - [ be32, 0x007B3F4C, 0x48A4C070 ] # b 0x11fffbc
+      - [ be32, 0x011FFFD4, 0x4B5B3F7C ] # b 0x7b3f50
+  
+
+PPU-321ccf1f115007f3260650828b3c01e7e40775d4:
+
+  "Fix Hangar Missile":
+    Games:
+      "ARMORED CORE for Answer":
+        BLJM55005: [ All ]
+    Author: "BEZEL"
+    Patch Version: 1.0
+    Group: ""
+    Notes: "Fixes an issue where hangar missiles fail to lock on correctly."
+    Patch:
+      - [ load, *MissileFix ]
+      - [ be32, 0x007B423C, 0x48A4BD80 ] # b 0x11fffbc
+      - [ be32, 0x011FFFD4, 0x4B5B426C ] # b 0x7b4240
