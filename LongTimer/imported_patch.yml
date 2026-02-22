@@ -1,0 +1,37 @@
+Version: 1.2
+
+PPU-0bc5d0e97eebf1b3bf933f2e442acb20d3a1d969:
+  "Long Timer":
+    Games:
+      "ARMORED CORE for Answer":
+        BLJM60066: [ 01.35 ]
+    Author: "BEZEL"
+    Patch Version: 1.0
+    Group: ""
+    Notes: "This patch changes the PvP time limit from 15 minutes to 32,767 minutes in order to improve debugging efficiency."
+    Patch:
+      - [ be32, 0x009CF9F0, 0x38007FFF ] # li r0, 0x7FFF
+
+PPU-c67c32700d8419d67b77a1ccfc88d05f37e41fc4:
+  "Long Timer":
+    Games:
+      "ARMORED CORE for Answer":
+        BLUS30187: [ All ]
+    Author: "BEZEL"
+    Patch Version: 1.0
+    Group: ""
+    Notes: "This patch changes the PvP time limit from 15 minutes to 32,767 minutes in order to improve debugging efficiency."
+    Patch:
+      - [ be32, 0x009CF8B0, 0x38007FFF ] # li r0, 0x7FFF
+
+PPU-321ccf1f115007f3260650828b3c01e7e40775d4:
+  "Long Timer":
+    Games:
+      "ARMORED CORE for Answer":
+        BLJM55005: [ All ]
+    Author: "BEZEL"
+    Patch Version: 1.0
+    Group: ""
+    Notes: "This patch changes the PvP time limit from 15 minutes to 32,767 minutes in order to improve debugging efficiency."
+    Patch:
+      - [ be32, 0x009CFBC0, 0x38007FFF ] # li r0, 0x7FFF
