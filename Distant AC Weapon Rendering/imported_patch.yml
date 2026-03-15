@@ -1,0 +1,43 @@
+Version: 1.2
+
+PPU-c67c32700d8419d67b77a1ccfc88d05f37e41fc4:
+
+  "Distant AC Weapon Rendering":
+    Games:
+      "ARMORED CORE for Answer":
+        BLUS30187: [ All ]
+    Author: "BEZEL"
+    Patch Version: 1.0
+    Group: ""
+    Notes: "This patch ensures that the weapon parts of ACs located more than 500 units away are rendered. This improves the visual effects during combat."
+    Patch:
+      - [ be32, 0x00A4E2E8, 0x4BFFFE50 ] # b 0xa4e138
+      - [ be32, 0x00A4E6C0, 0x4BFFFE7C ] # b 0xa4e53c
+
+PPU-0bc5d0e97eebf1b3bf933f2e442acb20d3a1d969:
+
+  "Distant AC Weapon Rendering":
+    Games:
+      "ARMORED CORE for Answer":
+        BLJM60066: [ 01.35 ]
+    Author: "BEZEL"
+    Patch Version: 1.0
+    Group: ""
+    Notes: "This patch ensures that the weapon parts of ACs located more than 500 units away are rendered. This improves the visual effects during combat."
+    Patch:
+      - [ be32, 0x00A4E428, 0x4BFFFE50 ] # b 0xa4e278
+      - [ be32, 0x00A4E800, 0x4BFFFE7C ] # b 0xa4e67c
+
+PPU-321ccf1f115007f3260650828b3c01e7e40775d4:
+
+  "Distant AC Weapon Rendering":
+    Games:
+      "ARMORED CORE for Answer":
+        BLJM55005: [ All ]
+    Author: "BEZEL"
+    Patch Version: 1.0
+    Group: ""
+    Notes: "This patch ensures that the weapon parts of ACs located more than 500 units away are rendered. This improves the visual effects during combat."
+    Patch:
+      - [ be32, 0x00A4E5F8, 0x4BFFFE50 ] # b 0xa4e448
+      - [ be32, 0x00A4E9D0, 0x4BFFFE7C ] # b 0xa4e84c
